@@ -14,47 +14,47 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/siteline/SwiftUI-Introspect",
             .upToNextMajor(from: "1.3.0")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/airbnb/lottie-ios",
             .upToNextMajor(from: "4.5.0")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/SDWebImage/SDWebImageSwiftUI",
             .upToNextMajor(from: "3.1.3")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git",
             .upToNextMajor(from: "1.7.0")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/marmelroy/PhoneNumberKit",
             .upToNextMajor(from: "4.0.1")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/stripe/stripe-ios",
             .upToNextMajor(from: "24.1.0")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/hmlongco/Resolver",
             .upToNextMajor(from: "1.5.1")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/gonzalezreal/swift-markdown-ui",
             .upToNextMajor(from: "2.4.1")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/googlemaps/ios-maps-sdk",
             .upToNextMajor(from: "9.2.0")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/malcommac/SwiftSimplify",
             .upToNextMajor(from: "1.1.1")
         ),
         .package(
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip",
+            url: "https://github.com/SwiftKickMobile/SwiftMessages",
             .upToNextMajor(from: "10.0.1")
         )
     ],
@@ -82,7 +82,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "Mozio",
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.1.0/Mozio.xcframework.zip", 
+            url: "", 
             checksum: ""
         )
     ]
