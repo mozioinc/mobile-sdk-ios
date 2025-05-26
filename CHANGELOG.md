@@ -7,16 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
  
 ## 0.1.0 - 2025-05-26
- 
-## 0.3.0 - 2025-02-04
 
 - fix: ios-read-changelog.sh script
+ 
+## 0.1.0 - 2025-05-26
  
 ## 0.3.0 - 2025-02-04
 
 - ci: update Gitversion.yml
 - ci: release workflow
-
-## 0.1.0 - 2025-01-31
-
 - feat: initial commit
