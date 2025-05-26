@@ -2,6 +2,8 @@
 
 Welcome to the Mozio iOS SDK! This repository includes a sample app to help you quickly integrate and test the SDK in your iOS projects. Follow this guide to set up the SDK, customize it to your needs, and begin utilizing its powerful features.
 
+You can find a complete sample project in the `Sample/SampleApp` directory that demonstrates the SDK integration and usage.
+
 ## 📦 Setup the SDK
 
 ### 1. Add Package Dependency
@@ -145,12 +147,12 @@ class ViewController: UIViewController {
 
 ### Theme Colors
 
-Customize the SDK's appearance through `MozioSDK.configuration.appearance`:
+Customize the SDK's appearance through `MozioSDK.shared.configuration.appearance`:
 
 ```swift
 // Configure colors
-MozioSDK.configuration.appearance.colors.primaryColor = .blue
-MozioSDK.configuration.appearance.colors.secondaryColor = .red
+MozioSDK.shared.configuration.appearance.colors.primaryColor = .blue
+MozioSDK.shared.configuration.appearance.colors.secondaryColor = .red
 ```
 
 Available color properties:
