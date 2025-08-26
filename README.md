@@ -190,6 +190,39 @@ public enum BookingEvent {
    - Triggered if the booking process fails
    - The `Error` object contains details about what went wrong
 
-## 🐞 Reporting Issues
+## � Reservation Deetails & Live Tracking
+
+The SDK includes a comprehensive reservation details and live tracking feature that allows users to monitor their ride status and driver location in real-time.
+
+### Features
+
+- **Real-time driver location updates** on an interactive map
+- **Live status updates** (driver en route, arrived, heading to destination, etc.)
+- **Driver contact information** with direct calling capability
+- **Vehicle details** including make, model, color, and license plate
+- **ETA updates** with remaining time to pickup/destination
+- **Pickup instructions** with detailed guidance
+
+### Integration Example
+
+The tracking feature is accessed through the **Find Reservation** functionality. Call `MozioSDK.shared.findReservation()` to start the flow:
+
+```swift
+// Start the find reservation flow
+//
+// This presents a bottom sheet where users:
+// 1. Enter reservation code and last name
+// 2. View reservation details screen
+// 3. Tap "Track ride" button to start live tracking
+
+// The SDK automatically handles:
+// - Find reservation bottom sheet presentation
+// - Reservation details screen with tracking button
+// - Full-screen tracking view with real-time updates
+// - Error handling for invalid reservation codes
+MozioSDK.shared.findReservation()
+```
+
+## �🐞 Reporting Issues
 
 If you encounter any issues or have questions, please open an issue in the Mozio iOS SDK repository.

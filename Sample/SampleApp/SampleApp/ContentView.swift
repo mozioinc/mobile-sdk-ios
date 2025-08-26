@@ -16,6 +16,10 @@ struct ContentView: View {
             Button("Search Rides") {
                 showSearch.toggle()
             }
+            
+            Button("Find reservation") {
+                MozioSDK.shared.findReservation()
+            }
         }
         .fullScreenCover(isPresented: $showSearch, content: {
             MozioSDK.views.searchRideView()
