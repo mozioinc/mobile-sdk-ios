@@ -183,16 +183,16 @@ public enum BookingEvent {
 ```
 
 1. `.success([String])`
-   - Triggered when a booking is successfully completed
+   - Triggered when a booking is completed
    - Each string in the array represents a unique booking confirmation number
 
 2. `.failure(Error)`
    - Triggered if the booking process fails
    - The `Error` object contains details about what went wrong
 
-## � Reservation Deetails & Live Tracking
+## 🚗 Reservation Details & Live Tracking
 
-The SDK includes a comprehensive reservation details and live tracking feature that allows users to monitor their ride status and driver location in real-time.
+The SDK includes comprehensive reservation details and a live tracking feature that allows users to monitor their ride status and driver location in real-time.
 
 ### Features
 
