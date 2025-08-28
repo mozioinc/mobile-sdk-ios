@@ -183,7 +183,7 @@ public enum BookingEvent {
 ```
 
 1. `.success([String])`
-   - Triggered when a booking is completed
+   - Triggered when a booking is successfully completed
    - Each string in the array represents a unique booking confirmation number
 
 2. `.failure(Error)`
@@ -192,7 +192,7 @@ public enum BookingEvent {
 
 ## 🚗 Reservation Details & Live Tracking
 
-The SDK includes comprehensive reservation details and a live tracking feature that allows users to monitor their ride status and driver location in real-time.
+The SDK includes a comprehensive reservation details and live tracking feature that allows users to monitor their ride status and driver location in real-time.
 
 ### Features
 
@@ -223,6 +223,67 @@ The tracking feature is accessed through the **Find Reservation** functionality.
 MozioSDK.shared.findReservation()
 ```
 
-## �🐞 Reporting Issues
+### How SDK Tracking Works with Mozio Driver App
+
+The SDK tracking system provides a seamless real-time experience that synchronizes with the **[Mozio Driver app](https://apps.apple.com/us/app/mozio-driver/id1436530159)**. Here's the detailed step-by-step workflow:
+
+#### Step 1: Driver Assignment - Tracking Not Available Yet
+- **Mozio Driver App:** 
+    - Driver receives a new reservation assignment
+- **SDK Behavior:**
+    - Reservation status shows as `Not Started`
+    - Users see reservation details (pickup time, assigned driver and vehicled details, pickup and destination location etc)
+    - Tracking button checks reservation status when tapped
+        - If it's still `Not Started`, it shows an alert to the user
+        - If it reaches a trackable state, it presents the full-screen tracking view with real-time updates
+
+#### Step 2: Driver Departs for Pickup - Tracking Begins
+- **Mozio Driver App:** 
+    - Driver swipes to indicate they are departing for pickup location
+- **SDK Behavior:**
+    - Reservation status updates to `Driver En Route`
+    - **Tracking becomes available** 
+    - When user taps "Track Ride", the full-screen tracking view opens
+    - Tracking title shows `Driver on their way`
+    - **Real-time driver location updates begin** on the map
+        - ETA to pickup location is displayed and continuously updated
+        - Driver information panel shows contact details and vehicle info
+        - Status banner shows "Your driver is on the way to pick you up"
+
+#### Step 3: Driver Arrives at Pickup Point
+- **Mozio Driver App:** 
+    - Driver arrives at pickup location and updates status
+- **SDK Behavior:**
+    - Reservation status updates to `Driver Arrived`
+    - Tracking title shows `Your driver has arrived`
+    - **Driver location pin shows at pickup point** on the map
+    - Status banner changes to "Your driver has arrived at the pickup location"
+    - **Pickup instructions are prominently displayed** to guide passenger
+    - Driver contact information remains accessible for coordination
+    - **No-show handling:** If passenger doesn't appear, driver can mark as no-show, updating SDK status to `No Show`
+
+#### Step 4: En Route to Destination
+- **Mozio Driver App:** 
+    - Driver confirms passenger pickup and begins journey to destination
+- **SDK Behavior:**
+    - Reservation status updates to `In Progress`
+    - Tracking title changes to `Heading to [destination]`
+    - **ETA switches from pickup to destination** timing
+    - Real-time route visualization shows on map with driver's current position
+    - Status banner shows "You're on your way to [destination]"
+    - **Continuous location and ETA updates** as driver progresses along route
+    - Driver remains contactable throughout the journey
+
+#### Step 5: Ride Completed
+- **Mozio Driver App:** 
+    - Driver arrives at destination, drops off passenger and swipes to complete the ride
+- **SDK Behavior:**
+    - Reservation status updates to `Completed`
+    - Tracking title shows ride completion status
+    - **Animated celebration view appears** confirming successful ride completion
+    - Final trip summary is displayed with completion time
+    - Tracking automatically stops and view can be dismissed
+
+## 🐞 Reporting Issues
 
 If you encounter any issues or have questions, please open an issue in the Mozio iOS SDK repository.
