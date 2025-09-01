@@ -237,6 +237,11 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
         - If it's still `Not Started`, it shows an alert to the user
         - If it reaches a trackable state, it presents the full-screen tracking view with real-time updates
 
+<div align="center">
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 18 04 AM" src="https://github.com/user-attachments/assets/440391a5-359a-4368-a694-6c3dec58a13a" />
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 18 18 AM" src="https://github.com/user-attachments/assets/d9dbdeb8-0f4b-43ab-a92c-6bed5884a03b" />
+</div>
+
 #### Step 2: Driver Departs for Pickup - Tracking Begins
 - **Mozio Driver App:** 
     - Driver swipes to indicate they are departing for pickup location
@@ -250,6 +255,10 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
         - Driver information panel shows contact details and vehicle info
         - Status banner shows "Your driver is on the way to pick you up"
 
+<div align="center">
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 19 47 AM" src="https://github.com/user-attachments/assets/3354c8b8-91c8-48ca-a44b-265144d22a55" />
+</div>
+
 #### Step 3: Driver Arrives at Pickup Point
 - **Mozio Driver App:** 
     - Driver arrives at pickup location and updates status
@@ -261,6 +270,10 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
     - **Pickup instructions are prominently displayed** to guide passenger
     - Driver contact information remains accessible for coordination
     - **No-show handling:** If passenger doesn't appear, driver can mark as no-show, updating SDK status to `No Show`
+
+<div align="center">
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 20 59 AM" src="https://github.com/user-attachments/assets/bce9f267-25a6-40b5-999d-6dcc6e95e1cc" />
+</div>
 
 #### Step 4: En Route to Destination
 - **Mozio Driver App:** 
@@ -274,6 +287,10 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
     - **Continuous location and ETA updates** as driver progresses along route
     - Driver remains contactable throughout the journey
 
+<div align="center">
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 22 46 AM" src="https://github.com/user-attachments/assets/ff80ef5b-4702-48fb-a7ae-277328a1f338" />
+</div>
+
 #### Step 5: Ride Completed
 - **Mozio Driver App:** 
     - Driver arrives at destination, drops off passenger and swipes to complete the ride
@@ -283,6 +300,12 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
     - **Animated celebration view appears** confirming successful ride completion
     - Final trip summary is displayed with completion time
     - Tracking automatically stops and view can be dismissed
+
+<div align="center">
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 16 24 AM" src="https://github.com/user-attachments/assets/84937d09-252b-4695-92f9-53ee4a82e5c6" />
+    <img width="30%" alt="Screenshot 2025-09-01 at 11 15 48 AM" src="https://github.com/user-attachments/assets/9edde139-976e-4ad3-a263-7c8a916ac17b" />
+</div>
+    
 
 ## 🐞 Reporting Issues
 
