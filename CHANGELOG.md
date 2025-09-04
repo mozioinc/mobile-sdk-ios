@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
-## 0.1.0 - 2025-08-26
+## 0.1.1 - 2025-09-04
 
+- chore: no user facing changes
+ 
+## 0.1.0 - 2025-08-28
 - feat: add reservation details and live tracking
 - fix: ios-read-changelog.sh script
 - ci: update Gitversion.yml
