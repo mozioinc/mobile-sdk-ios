@@ -1,5 +1,5 @@
 {
-  "originHash" : "e890bf4ee5be745fa80b623b9f5479e8dd296c8a002296c981f55d41ddbba4c8",
+  "originHash" : "2ccfc195b25d6bbeb93a523c5d755c036cf9cb68d2153a997d0683dafbb5fd03",
   "pins" : [
     {
       "identity" : "ios-maps-sdk",
@@ -33,17 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",
       "state" : {
-        "revision" : "047aa81b77adcbf583a966dfef620d17650cc656",
-        "version" : "4.5.1"
-      }
-    },
-    {
-      "identity" : "mobile-sdk-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mozioinc/mobile-sdk-ios",
-      "state" : {
-        "branch" : "main",
-        "revision" : "c046edefda795f71e7c6eb181836ab789e0241c2"
+        "revision" : "a004050748dc197c56256a14dca49a035d74726c",
+        "version" : "4.5.2"
       }
     },
     {
@@ -60,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/PhoneNumberKit",
       "state" : {
-        "revision" : "288b99e9e99926bc8be41220802df83c059fac9b",
-        "version" : "4.0.2"
+        "revision" : "8cba2258060e356d5fc4836d4ff8549faa2409dd",
+        "version" : "4.1.4"
       }
     },
     {
@@ -78,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
       "state" : {
-        "revision" : "cac9a55a3ae92478a2c95042dcc8d9695d2129ca",
-        "version" : "5.21.0"
+        "revision" : "34cf2423a2c4088d06a3b08655603b5bc3eeeb3a",
+        "version" : "5.21.2"
       }
     },
     {
@@ -105,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stripe/stripe-ios",
       "state" : {
-        "revision" : "5b9444d1e765ee7dcc58ea8d1ae0acc4bbfbf435",
-        "version" : "24.14.0"
+        "revision" : "b3cfef0afb1aad0200d6e7ce016abd60303e4e05",
+        "version" : "24.23.0"
       }
     },
     {
@@ -132,8 +123,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftKickMobile/SwiftMessages",
       "state" : {
-        "revision" : "c544df6ce316422b9d65a571f932e800213dd09c",
-        "version" : "10.0.1"
+        "revision" : "c0ff6c65bfc00e6a707957cb7069988c5cde2a30",
+        "version" : "10.0.2"
       }
     },
     {

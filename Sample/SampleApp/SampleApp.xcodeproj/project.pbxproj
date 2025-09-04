@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1D2AEB2E6A1DEC00E83AEF /* Mozio in Frameworks */ = {isa = PBXBuildFile; productRef = DA1D2AEA2E6A1DEC00E83AEF /* Mozio */; };
 		DAE368012DE47B7A00179489 /* Mozio in Frameworks */ = {isa = PBXBuildFile; productRef = DAE368002DE47B7A00179489 /* Mozio */; };
-		DAE368042DE47F6300179489 /* Mozio in Frameworks */ = {isa = PBXBuildFile; productRef = DAE368032DE47F6300179489 /* Mozio */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE368012DE47B7A00179489 /* Mozio in Frameworks */,
-				DAE368042DE47F6300179489 /* Mozio in Frameworks */,
+				DA1D2AEB2E6A1DEC00E83AEF /* Mozio in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 			name = SampleApp;
 			packageProductDependencies = (
 				DAE368002DE47B7A00179489 /* Mozio */,
-				DAE368032DE47F6300179489 /* Mozio */,
+				DA1D2AEA2E6A1DEC00E83AEF /* Mozio */,
 			);
 			productName = SampleApp;
 			productReference = DAD068F92D47738D006C327E /* SampleApp.app */;
@@ -126,7 +126,7 @@
 			mainGroup = DAD068F02D47738D006C327E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DAE368022DE47F6300179489 /* XCRemoteSwiftPackageReference "mobile-sdk-ios" */,
+				DA1D2AE92E6A1DEC00E83AEF /* XCLocalSwiftPackageReference "../../../mobile-sdk-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DAD068FA2D47738D006C327E /* Products */;
@@ -290,6 +290,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sample App";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This sample app wants to use your location when the app is foregrounded";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,6 +325,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Sample App";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This sample app wants to use your location when the app is foregrounded";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,25 +371,20 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DAE368022DE47F6300179489 /* XCRemoteSwiftPackageReference "mobile-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mozioinc/mobile-sdk-ios";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		DA1D2AE92E6A1DEC00E83AEF /* XCLocalSwiftPackageReference "../../../mobile-sdk-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../mobile-sdk-ios";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DAE368002DE47B7A00179489 /* Mozio */ = {
+		DA1D2AEA2E6A1DEC00E83AEF /* Mozio */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Mozio;
 		};
-		DAE368032DE47F6300179489 /* Mozio */ = {
+		DAE368002DE47B7A00179489 /* Mozio */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DAE368022DE47F6300179489 /* XCRemoteSwiftPackageReference "mobile-sdk-ios" */;
 			productName = Mozio;
 		};
 /* End XCSwiftPackageProductDependency section */
