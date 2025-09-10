@@ -306,6 +306,53 @@ The SDK tracking system provides a seamless real-time experience that synchroniz
     <img width="30%" alt="Screenshot 2025-09-01 at 11 15 48 AM" src="https://github.com/user-attachments/assets/9edde139-976e-4ad3-a263-7c8a916ac17b" />
 </div>
     
+---
+
+### 🛰️ How to simulate the ride live tracking
+You can run a full end-to-end simulation to see how live tracking looks in the sdk and in your app.  
+
+#### 1. Book a Test Ride  
+
+Use the following settings when booking:  
+
+- **Pickup time:** within the next 3 hours.  
+- **Routes (choose one):**  
+  - *Short ride:* **44 Tehama Street, San Francisco, CA, USA** → **301 Van Ness Avenue, San Francisco, CA, USA**  
+  - *Long ride:* **SFO: San Francisco, CA - San Francisco** → **44 Tehama Street, San Francisco, CA, USA**  
+- **Provider:** select *Tracking Testing Provider*.  
+
+#### 2. Run the Simulation Script
+
+From your terminal, run:  
+
+```bash
+./run_driver_live_tracking_simulation.sh CONFIRMATION_NUMBER LAST_NAME [SPEEDUP]
+```
+
+`CONFIRMATION_NUMBER` → the `MOZxxxxx` ID from your booking.  
+`LAST_NAME` → passenger’s last name.  
+`SPEEDUP` (optional) → multiplier for how fast the trip is simulated.  
+Default: `1` (real-time). For longer rides, increase to `5`, `10`, etc.
+
+When the script starts, it will also print a `simulation_id`. Keep this ID handy, it uniquely identifies your simulation in the logs if you need to contact us for any troubleshooting.
+
+#### 3. View the results
+If everything runs correctly, the ride will begin broadcasting live tracking.
+
+- Open the **Find Reservation** screen in the app using the *Confirmation Number* and *Passenger's Last Name*
+- You should see a simulated car moving along the route 🚗💨 and ride status updates!
+
+#### 🛠️ Troubleshooting
+
+If you don’t see the car moving on the map:
+- ✅ Double-check your booking: ensure pickup time is within 3 hours and you chose *Tracking Testing Provider*. For the records, you could book also at another time, but live-tracking can be starte only when the current time is next to the pickup time.
+- ✅ Confirm your inputs: `CONFIRMATION_NUMBER` must be the `MOZxxxxx` ID, and the passenger’s last name must match exactly.
+- ✅ Adjust the speedup: for longer rides, use a higher `SPEEDUP` value so the car moves at a visible pace.
+- ✅ Wait a moment: tracking updates are sent periodically; it may take a few seconds for the car to appear.
+
+Still stuck? Reach out to the team with your `CONFIRMATION_NUMBER`, `LAST_NAME`, and `simulation_id` so we can help investigate.
+
+---
 
 ## 🐞 Reporting Issues
 
