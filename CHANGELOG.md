@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
+## 0.3.1 - 2025-09-11
+
+- build: use Xcode 16.4
+ 
 ## 0.1.1 - 2025-09-04
 
 - chore: no user facing changes
@@ -16,3 +20,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci: update Gitversion.yml
 - ci: release workflow
 - feat: initial commit
+ 
