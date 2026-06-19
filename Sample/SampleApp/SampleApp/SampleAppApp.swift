@@ -48,7 +48,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
             environment: .staging,
             apiKey: "<YOUR_MOZIO_API_KEY>",
             googleMapsAPIKey: "<YOUR_GOOGLE_MAPS_API_KEY",
-            appearance: .default
+            appearance: Appearance(colors: sampleLightColorsConfig)
         )
         MozioSDK.shared.setup(configuration: configuration)
     }

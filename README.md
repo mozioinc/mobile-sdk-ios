@@ -143,6 +143,22 @@ class ViewController: UIViewController {
 }
 ```
 
+---
+
+## 🎬 SDK in Action
+
+See the Mozio iOS SDK features demonstrated in the sample app:
+
+**Search rides & booking flow** — search for available rides, compare options, and complete a booking.
+
+[![Search rides & booking flow](docs/screenrecordings/search_rides_and_booking_flow_preview.png)](https://github.com/user-attachments/assets/401cd3e5-dc28-4981-8586-ac2b563b5dd1)
+
+**Booking details & live ride tracking** — view booking details and track a ride in real time.
+
+[![Booking details & live ride tracking](docs/screenrecordings/booking_details_and_ride_live_tracking_preview.png)](https://github.com/user-attachments/assets/2a9f00b5-38c8-480a-83c1-90bc3663138a)
+
+---
+
 ## 🎨 Customization
 
 ### Theme Colors
