@@ -12,7 +12,7 @@ Add the Mozio SDK to your project using Swift Package Manager:
 
 1. In Xcode, go to File > Add Packages...
 2. Enter the Mozio SDK repository URL: `https://github.com/mozioinc/mobile-sdk-ios`
-3. Select the version you want to use (we recommend using the latest stable version)
+3. Select the version you want to use (we recommend using the latest stable version; log handlers need 0.4.0 or later)
 4. Choose your target where you want to use the SDK
 
 ### 2. Import the SDK
@@ -37,7 +37,8 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
             environment: .production, // Use .staging for development
             apiKey: "<YOUR_MOZIO_API_KEY>", // Get this from Mozio
             googleMapsAPIKey: "<YOUR_GOOGLE_MAPS_API_KEY>", // Required for map functionality
-            appearance: .default // Use .default or skip for default appearance
+            appearance: .default, // Use .default or skip for default appearance
+            logHandlers: [] // Optional: forward the SDK's logs and errors, see Logging
         )
         MozioSDK.shared.setup(configuration: configuration)
     }
@@ -55,6 +56,45 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 ```
 
 Use `.production` or `.staging` based on your build configuration. Replace `YOUR_MOZIO_API_KEY` with the appropriate API key provided by Mozio and `YOUR_GOOGLE_MAPS_API_KEY` with your Google Maps API key.
+
+## 📝 Logging
+
+The SDK logs to the console: everything in debug builds, `.info` and above otherwise.
+
+To also send the SDK's logs and unexpected errors to your crash reporting or logging, pass log handlers in the configuration. For example, with Firebase Crashlytics:
+
+```swift
+import FirebaseCrashlytics
+import Mozio
+
+struct MozioCrashlyticsLogHandler: MozioLogHandler {
+    let minimumLevel: MozioLogLevel = .info
+
+    // Breadcrumbs
+    func log(level: MozioLogLevel, label: String, message: String, metadata _: [String: String]) {
+        Crashlytics.crashlytics().log("[Mozio] [\(level)] [\(label)] \(message)")
+    }
+
+    // Non-fatals: `error` has only its domain and code, so attach the context
+    func record(error: Error, label: String, message: String, metadata: [String: String]) {
+        let userInfo = metadata.merging(["label": label, "message": message]) { current, _ in current }
+        Crashlytics.crashlytics().record(error: error, userInfo: userInfo)
+    }
+}
+
+let configuration = MozioSDK.Configuration(
+    environment: .production,
+    apiKey: "<YOUR_MOZIO_API_KEY>",
+    googleMapsAPIKey: "<YOUR_GOOGLE_MAPS_API_KEY>",
+    logHandlers: [MozioCrashlyticsLogHandler()]
+)
+MozioSDK.shared.setup(configuration: configuration)
+```
+
+- `log(level:label:message:metadata:)` receives every log at `minimumLevel` or above.
+- `record(error:label:message:metadata:)` receives only unexpected errors (not cancellation, connectivity or location permission ones) logged at `.error` or above, and at `minimumLevel` or above. The error is an `NSError` with its root cause's domain and code only: attach `label`, `message` and `metadata` to the report, e.g. as custom keys. It does nothing by default.
+- Handlers are called on a background queue, one call at a time.
+- Logging is set up by the first `setup` call: call it at app launch, before using the SDK. Log handlers passed to later calls are ignored.
 
 ## 🚀 Using the SDK
 
