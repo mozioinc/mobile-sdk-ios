@@ -12,7 +12,7 @@ Add the Mozio SDK to your project using Swift Package Manager:
 
 1. In Xcode, go to File > Add Packages...
 2. Enter the Mozio SDK repository URL: `https://github.com/mozioinc/mobile-sdk-ios`
-3. Select the version you want to use (we recommend using the latest stable version; log handlers need 0.4.0 or later)
+3. Select the version you want to use (we recommend using the latest stable version; log handlers need 0.4.1 or later)
 4. Choose your target where you want to use the SDK
 
 ### 2. Import the SDK
