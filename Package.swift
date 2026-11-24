@@ -92,8 +92,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "Mozio",
-            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.4.0/Mozio.xcframework.zip", 
-            checksum: "e7e304321ba6904952ddfbba050997944579bf3b448828565ac8f6ab2325bd70"
+            url: "https://github.com/mozioinc/mobile-sdk-ios/releases/download/0.4.1/Mozio.xcframework.zip", 
+            checksum: "6c149d3495f51049a82997bae08295b5cc3c5f4634d8dd8ce7440fdefe3c16bd"
         )
     ]
 )
