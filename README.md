@@ -105,13 +105,13 @@ The `searchRideView` function accepts several optional parameters with sensible 
 ```swift
 MozioSDK.views.searchRideView(
     displayResultsWhileLoading: Bool = false,  // Wait for all results before displaying
-    searchResultsSanitizer: ([Ride]) -> [Ride] = { $0 },  // Transform or filter rides, default returns all
+    searchResultsSanitizer: ([MozioRide]) -> [MozioRide.ID] = { $0.map(\.id) },  // Filter or sort rides, default keeps all
     onBookingEvent: (BookingEvent) -> Void = { _ in }  // Handle booking events
 )
 ```
 
 - `displayResultsWhileLoading`: When `true` shows search results as they arrive. When `false` (default) waits for all results before displaying.
-- `searchResultsSanitizer`: Optional closure to transform, filter, or sort search results. By default, no transformation is applied.
+- `searchResultsSanitizer`: Optional closure to filter or sort search results: it receives the rides and returns the IDs of the rides to show, in order. By default, all rides are shown.
 - `onBookingEvent`: Optional closure to handle booking events. If not provided, events are logged internally but not exposed to the app.
 
 ### SwiftUI Integration
@@ -137,8 +137,9 @@ struct ContentView: View {
                 searchResultsSanitizer: { rides in
                     // Example: Filter and sort rides
                     rides
-                        .filter { $0.price.amount < 100 }  // Only show rides under $100
-                        .sorted { $0.price.amount < $1.price.amount }  // Sort by price
+                        .filter { $0.totalCost < 100 }  // Only show rides under 100
+                        .sorted { $0.totalCost < $1.totalCost }  // Sort by price
+                        .map(\.id)
                 },
                 onBookingEvent: { bookingEvent in
                     switch bookingEvent {
