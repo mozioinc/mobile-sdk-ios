@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
+## 0.4.0 - 2026-11-24
+
+- fix: use finalChargeablePrice when creating a payment intent 
+- fix: improve error reporting and logging
+- feat: `MozioSDK.Configuration` takes log handlers, e.g. to forward the SDK's logs and errors to your crash reporting
+ 
 ## 0.3.1 - 2025-09-11
 
 - build: use Xcode 16.4
