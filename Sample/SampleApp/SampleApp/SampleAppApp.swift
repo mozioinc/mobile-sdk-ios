@@ -48,7 +48,8 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
             environment: .staging,
             apiKey: "<YOUR_MOZIO_API_KEY>",
             googleMapsAPIKey: "<YOUR_GOOGLE_MAPS_API_KEY",
-            appearance: Appearance(colors: sampleLightColorsConfig)
+            appearance: Appearance(colors: sampleLightColorsConfig),
+            logHandlers: [SampleLogHandler()]
         )
         MozioSDK.shared.setup(configuration: configuration)
     }
@@ -59,5 +60,19 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         MozioSDK.shared.application.scene(scene, openURLContexts: URLContexts)
+    }
+}
+
+/// Receives the SDK's logs and unexpected errors, e.g. to forward them to your crash reporting or logging.
+/// The SDK already logs to the console: replace the prints with calls to your tools (see Logging in the README).
+struct SampleLogHandler: MozioLogHandler {
+    let minimumLevel: MozioLogLevel = .warning
+
+    func log(level: MozioLogLevel, label: String, message: String, metadata _: [String: String]) {
+        print("[SampleLogHandler] [\(level)] [\(label)] \(message)")
+    }
+
+    func record(error: Error, label: String, message: String, metadata: [String: String]) {
+        print("[SampleLogHandler] Unexpected error \(error) [\(label)] \(message) \(metadata)")
     }
 }
